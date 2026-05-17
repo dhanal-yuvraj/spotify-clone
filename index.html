@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify - Your favourite music is here</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <img src="logo.png" alt="Spotify" class="logo" />
+          <span class="brand-text">Spotify</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+            <li><a href="#" class="nav-link" data-page="discover">Discover</a></li>
+            <li><a href="#" class="nav-link" data-page="library">Library</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+      <!-- Sidebar (for future playlist features) -->
+      <aside class="sidebar">
+        <div class="sidebar-content">
+          <h3>Playlists</h3>
+          <ul class="playlist-list">
+            <li class="playlist-item active" data-playlist="all">
+              <i class="fas fa-compact-disc"></i> Now Playing
+            </li>
+            <li class="playlist-item" data-playlist="liked">
+              <i class="fas fa-heart"></i> Liked Songs
+            </li>
+            <li class="playlist-item" data-playlist="popular">
+              <i class="fas fa-fire"></i> Popular
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="content-area">
+        <section class="hero-section">
+          <div class="hero-content">
+            <h1 class="playlist-title" id="pageTitle">Best of NCS</h1>
+            <p class="playlist-subtitle" id="pageSubtitle">No Copyright Sounds - Premium Music</p>
+          </div>
+        </section>
+
+        <!-- Songs Grid Container -->
+        <section class="songs-section">
+          <div class="songs-grid">
+            <!-- Song items will be rendered here -->
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Player Footer -->
+    <footer class="player-footer">
+      <div class="player-container">
+        <!-- Left: Song Info -->
+        <div class="player-info">
+          <img id="playerCoverImg" src="" alt="Cover" class="player-cover" />
+          <div class="song-details">
+            <h4 id="playerSongName">Now Playing</h4>
+            <p id="playerArtist">Artist Name</p>
+          </div>
+        </div>
+
+        <!-- Center: Player Controls -->
+        <div class="player-controls">
+          <div class="player-buttons">
+            <button id="previous" class="control-btn" title="Previous song" aria-label="Play previous song">
+              <i class="fas fa-step-backward" aria-hidden="true"></i>
+            </button>
+            <button id="masterPlay" class="control-btn play-btn" title="Play/Pause" aria-label="Play or pause the music">
+              <i id="playPauseIcon" class="fas fa-play-circle" aria-hidden="true"></i>
+            </button>
+            <button id="next" class="control-btn" title="Next song" aria-label="Play next song">
+              <i class="fas fa-step-forward" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="progress-container">
+            <span id="currentTime" class="time">0:00</span>
+            <input
+              type="range"
+              id="myProgressBar"
+              class="progress-bar"
+              min="0"
+              value="0"
+              max="100"
+              aria-label="Song progress bar"
+              title="Click to seek"
+            />
+            <span id="duration" class="time">0:00</span>
+          </div>
+        </div>
+
+        <!-- Right: Volume & More -->
+        <div class="player-right">
+          <img src="playing.gif" alt="playing" id="gif" class="playing-gif" />
+          <i class="fas fa-volume-up"></i>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
